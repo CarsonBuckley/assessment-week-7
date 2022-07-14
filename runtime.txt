@@ -1,0 +1,11 @@
+Week 7 assessment
+
+	Insert	Append
+Tiny Array	21.459 μs	58.167 μs
+Small Array	25.083 μs	57.083 μs
+Medium Array	122.542 μs	98.542 μs
+Large Array	7.595792 ms	446.792 μs
+Extra Large Array	766.590208 ms	1.732833 ms
+
+
+Looking at the results, it is clear that .unshift is faster than .push when dealing with small sized arrays. I think this is the case because .unshift only has to add the items to the very beginning of the array, and then shift everything after that down (n) number of spots. And so if it’s a small array it’s not too difficult to perform that task. When .push-ing items to the array, it’s marginally slower then .unshift when dealing with small arrays, but as the array gets bigger in size, .push scales much better than .unshift. I think this is because instead of shifting everything in the array down and then inserting the items at the front, all it has to do if jump to the end of the array and append to the end, making it much easier instead of moving 10,000 items down a spot.
